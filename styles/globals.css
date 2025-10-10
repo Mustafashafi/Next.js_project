@@ -208,97 +208,92 @@ button { font-family: inherit; }
   min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
-  
-}
-.hero-tag{
-  margin-left: 350px;
-  font-size: 30px;
-  line-height: 80px;
-   
 }
 
-.hero-content img{
-  margin-left: 470px;
-  margin-top: -180;
-  background-color: white;
-  padding: 7px 30px;
-  
-  border-radius: 10px;
-
-}
-.hero-bg {
+/* Background Video Styling */
+.hero-section video.hero-bg {
   position: absolute;
-  right: 0;
   top: 0;
-  bottom: 0;
+  left: 0;
   width: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.25;
-  pointer-events: none;
+  height: 100%;
+  object-fit: cover; /* ensures full coverage without distortion */
+  object-position: center;
+  z-index: 0;
+  opacity: 0.85; /* slightly dimmed for readability */
+  filter: brightness(0.9) contrast(1.05);
+  transform: translateZ(0); /* fixes blur on some GPUs */
 }
 
+/* Text + Content Layer */
 .hero-content {
   position: relative;
   z-index: 2;
   padding: 48px 0;
   color: white;
-
-  /* Text shadow for all child text */
+  text-align: center;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-
-  /* Optional: rounded container effect */
   border-radius: 12px;
+}
 
-  /* Optional: apply inline-block if you want the border-radius to affect the container size */
+.hero-content img {
+  margin: 0 auto;
+  display: block;
+  background-color: white;
+  padding: 7px 30px;
+  border-radius: 10px;
+}
+
+.hero-tag {
+  margin-top: 20px;
+  font-size: 28px;
+  line-height: 60px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 45px;
+  line-height: 70px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
   display: inline-block;
 }
 
-
+.hero-title span {
+  color: var(--primary);
+}
 
 .hero-sub {
-  font-size: 28px;
+  font-size: 26px;
   color: white;
   font-weight: 500;
-  margin-left: 100px;
-  margin-top: 20px;
-
-  /* Text shadow for subtle depth */
+  margin-top: 25px;
   text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
-
-  /* Optional: rounded corners if needed for padding */
   display: inline-block;
   padding: 5px 10px;
   border-radius: 10px;
 }
 
-
-.hero-title {
-  font-size: 45px;
-  margin-left: 200px;
-  line-height: 70px;
-  color: white;
-  font-weight: 600;
-
-  /* Text shadow for glowing effect */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-
-  /* Optional: wrap the text in a background with rounded corners */
-  display: inline-block;       /* needed for padding & border-radius */
-  padding: 10px 20px;          /* space around text */
-
-  border-radius: 15px;         /* rounded corners */
-}
-
-
-.hero-title span { color: var(--primary); }
-
 .hero-desc {
   color: var(--muted);
   font-size: 16px;
   margin-bottom: 22px;
+}
+
+/* Optional dark overlay to improve text visibility */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 
 /* -------------------------
