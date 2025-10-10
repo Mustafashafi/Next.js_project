@@ -321,6 +321,7 @@ button { font-family: inherit; }
    ------------------------- */
 .what-we-do h2{
   font-size: 40px;
+  color: #186cb5;
 }
 .what-we-do .icon-cards p{
   margin-top: 12px;
@@ -370,6 +371,7 @@ button { font-family: inherit; }
    }
    .products-section h2{
     font-size: 40px;
+    color: #186cb5;
    }
 .tabs {
   display: flex;
@@ -959,6 +961,7 @@ textarea {
   margin-bottom: 50px;
   font-size: 32px;
   font-weight: 600;
+  color: #186cb5;
 }
 
 .expertise-grid {
