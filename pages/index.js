@@ -269,7 +269,12 @@ Instead, the raison d’etre of AI4LYF is to deliver what humanity direly needs,
 <section className="section quick-guides">
   <div className="wrap">
     <h1>LYF Suite Quick Guide</h1>
-    <button>Download PDF Browchure</button>
+    <button
+  onClick={() => window.open('/LYF-Suite-Brochure.pdf', '_blank')}
+  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+>
+  Download PDF Brochure
+</button>
 
     <Swiper
       modules={[Navigation, Pagination]}
@@ -320,7 +325,12 @@ Instead, the raison d’etre of AI4LYF is to deliver what humanity direly needs,
 <section className="section quick-guides">
   <div className="wrap">
     <h1>Respire LYF Quick Guide</h1>
-    <button>Download PDF Browchure</button>
+    <button
+  onClick={() => window.open('/Respire-LYF-Broucher.pdf', '_blank')}
+  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+>
+  Download PDF Brochure
+</button>
 
     <Swiper
       modules={[Navigation, Pagination]}
