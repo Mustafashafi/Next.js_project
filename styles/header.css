@@ -1,0 +1,28 @@
+.site-header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 30px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+select{
+  
+  font-family: "auto";
+  border: 0;
+  padding-left: 15px;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  font-size: 18px;
+  
+}
+
+.logo {
+  color: #0070f3;
+}
