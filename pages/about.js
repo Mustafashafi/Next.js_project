@@ -12,9 +12,10 @@ export default function About() {
           <div className="partner-content">
             <div className="partner-text">
               <h1>Our Vision</h1>
-              <p className="muted">
-               Transforming the status quo reactive, expensive, sporadically accessible, and episodic "Sick care" into a predictive, preventive, personalized, continuously accessible, and affordable "healthcare" for fuller and longer lives for all.
-              </p>
+              <p className='muted'>
+  Transforming the status quo reactive, expensive, sporadically accessible, and episodic &quot;Sick care&quot; into a predictive, preventive, personalized, continuously accessible, and affordable &quot;healthcare&quot; for fuller and longer lives for all.
+</p>
+
             </div>
             <div className="partner-image">
               <img

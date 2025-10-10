@@ -218,7 +218,7 @@ export default function Home() {
         <div className="wrap">
           <div className="partner-content">
             <div className="partner-text">
-              <h1>Let's work together because:</h1><br />
+              <h1>Let&apos;s work together because:</h1><br />
               <p className="muted">
                 Countless studies confirm that the top killer diseases, as reported by WHO in this chart, can be prevented or better managed through continuous instead of episodic health monitoring, early diagnosis, preventive care and holistic health management. AI4LYF’s products are precisely designed to achieve that goal. Let’s save lives together, starting from you and inspiring others around!
               </p>
