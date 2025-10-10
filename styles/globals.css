@@ -235,6 +235,7 @@ button { font-family: inherit; }
   background-color: white;
   padding: 7px 30px;
   border-radius: 10px;
+  margin-top: -150px;
 }
 
 .hero-tag {
