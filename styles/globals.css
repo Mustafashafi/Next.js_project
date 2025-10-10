@@ -1,14 +1,4 @@
-/* styles/globals.css
-   Rewritten: pixel-accurate, production-ready CSS for AI4LYF homepage clone
-   - Uses Poppins (Google Fonts)
-   - Fixes product image/text layout
-   - Consistent spacing, color, typography
-   - Responsive + accessible
-*/
 
-/* -------------------------
-   Fonts & Basic Resets
-   ------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root{
