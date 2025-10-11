@@ -48,11 +48,21 @@ button { font-family: inherit; }
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background: transparent; /* start transparent */
   z-index: 999;
-  border-bottom: 1px solid #f0f4fb;
-  box-shadow: 0 4px 18px rgba(11,37,64,0.03);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(0px);
 }
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.85); /* blurred semi-transparent */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 18px rgba(11,37,64,0.05);
+  backdrop-filter: blur(8px);
+}
+
 
 .site-header .wrap {
   height: 72px;
@@ -1131,15 +1141,15 @@ border-radius: 30px;
       margin: 0px 100px;
       
     }
-    /* ======================================
-   🌍 GLOBAL SETUP
-   ====================================== */
 * {
   scroll-behavior: smooth;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
+.partner-section{
+  background: var(--bg-light);
+}
 .section,
 .what-we-do,
 .products-section,

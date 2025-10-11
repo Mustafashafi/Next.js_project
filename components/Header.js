@@ -1,14 +1,28 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Header() {
   const router = useRouter()
   const [isProductsOpen, setIsProductsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Detect scroll to toggle blur background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="wrap">
         {/* Logo */}
         <div className="logo">
@@ -18,7 +32,6 @@ export default function Header() {
             style={{ height: 70 }}
           />
         </div>
-
 
         {/* Navigation */}
         <nav className={`main-nav ${isMobileMenuOpen ? 'open' : ''}`}>
@@ -31,7 +44,7 @@ export default function Header() {
             className={`dropdown ${isProductsOpen ? 'open' : ''}`}
             onMouseEnter={() => setIsProductsOpen(true)}
             onMouseLeave={() => setIsProductsOpen(false)}
-            onClick={() => setIsProductsOpen(!isProductsOpen)} // for mobile
+            onClick={() => setIsProductsOpen(!isProductsOpen)} // mobile toggle
           >
             <button
               className={`dropdown-toggle ${
@@ -43,18 +56,10 @@ export default function Header() {
 
             {isProductsOpen && (
               <ul className="dropdown-menu">
-                <li>
-                  <a href="#product1">LYF SUITE</a>
-                </li>
-                <li>
-                  <a href="#product2">D-TWIN</a>
-                </li>
-                <li>
-                  <a href="#product3">DTP</a>
-                </li>
-                <li>
-                  <a href="#product4">LYF DATA</a>
-                </li>
+                <li><a href="#product1">LYF SUITE</a></li>
+                <li><a href="#product2">D-TWIN</a></li>
+                <li><a href="#product3">DTP</a></li>
+                <li><a href="#product4">LYF DATA</a></li>
               </ul>
             )}
           </div>
@@ -90,8 +95,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Optional Mobile Overlay */}
-      {isMobileMenuOpen && <div className="menu-overlay" onClick={() => setIsMobileMenuOpen(false)}></div>}
+      {/* Mobile overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="menu-overlay"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+      )}
     </header>
   )
 }
