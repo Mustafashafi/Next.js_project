@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Product() {
@@ -13,13 +14,18 @@ export default function Product() {
             <button className="tab">DTP</button>
             <button className="tab">D-TWIN</button>
             <button className="tab">LYF-DATA</button>
-          </div><br />
+          </div>
+          <br />
 
           <div className="product-display">
             <div className="product-img">
-              <img
+              <Image
                 src="https://ai4lyf.com/wp-content/uploads/lyfsuite.webp"
                 alt="LYF Suite"
+                width={500}
+                height={400}
+                style={{ borderRadius: "12px", objectFit: "cover" }}
+                priority
               />
             </div>
 
@@ -32,7 +38,6 @@ export default function Product() {
                 Together these products provide an end-to-end ecosystem for
                 holistic health management and predictive healthcare.
               </p>
-
             </div>
           </div>
         </div>

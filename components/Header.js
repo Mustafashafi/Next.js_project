@@ -5,6 +5,7 @@ import { useState } from 'react'
 export default function Header() {
   const router = useRouter()
   const [isProductsOpen, setIsProductsOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <header className="site-header">
@@ -18,8 +19,9 @@ export default function Header() {
           />
         </div>
 
+
         {/* Navigation */}
-        <nav className="main-nav">
+        <nav className={`main-nav ${isMobileMenuOpen ? 'open' : ''}`}>
           <Link href="/" className={router.pathname === '/' ? 'active' : ''}>
             Home
           </Link>
@@ -29,10 +31,11 @@ export default function Header() {
             className={`dropdown ${isProductsOpen ? 'open' : ''}`}
             onMouseEnter={() => setIsProductsOpen(true)}
             onMouseLeave={() => setIsProductsOpen(false)}
+            onClick={() => setIsProductsOpen(!isProductsOpen)} // for mobile
           >
             <button
               className={`dropdown-toggle ${
-                router.asPath.startsWith('#products') ? 'active' : ''
+                router.asPath.includes('#products') ? 'active' : ''
               }`}
             >
               Products
@@ -50,7 +53,7 @@ export default function Header() {
                   <a href="#product3">DTP</a>
                 </li>
                 <li>
-                  <a href="#product3">LYF DATA</a>
+                  <a href="#product4">LYF DATA</a>
                 </li>
               </ul>
             )}
@@ -58,7 +61,7 @@ export default function Header() {
 
           <a
             href="#expertise"
-            className={router.asPath === '#expertise' ? 'active' : ''}
+            className={router.asPath.includes('#expertise') ? 'active' : ''}
           >
             Our Expertise
           </a>
@@ -72,7 +75,7 @@ export default function Header() {
 
           <a
             href="#contact"
-            className={router.asPath === '#contact' ? 'active' : ''}
+            className={router.asPath.includes('#contact') ? 'active' : ''}
           >
             Contact
           </a>
@@ -86,6 +89,9 @@ export default function Header() {
           </a>
         </div>
       </div>
+
+      {/* Optional Mobile Overlay */}
+      {isMobileMenuOpen && <div className="menu-overlay" onClick={() => setIsMobileMenuOpen(false)}></div>}
     </header>
   )
 }

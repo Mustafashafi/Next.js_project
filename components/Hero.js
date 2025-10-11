@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -19,7 +20,15 @@ export default function Hero() {
 
         {/* Content Overlay */}
         <div className="wrap hero-content relative z-10">
-          <img src="/ai4lyf.svg" alt="AI4LYF Logo" className="header-logo" /><br />
+          <Image
+            src="/ai4lyf.svg"
+            alt="AI4LYF Logo"
+            className="header-logo"
+            width={200}
+            height={60}
+            priority
+          />
+          <br />
           <div className="hero-tag">
             Start living to your fullest with LYF Suite
           </div>
